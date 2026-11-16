@@ -1,0 +1,409 @@
+body.page-login{
+  display: grid;
+  place-items: center;
+}
+.page-login .tarjeta{
+  min-height: 525px;
+}
+.page-login .tarjeta-form{
+  flex: 1;
+  padding: 58px 62px;
+  color: var(--tinta);
+}
+.page-login .tarjeta-form h2{
+  font-size: 31px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.page-login .tarjeta-form h2+p{
+  margin-bottom: 30px;
+  color: var(--gris);
+  font-size: 15px;
+}
+.page-login label{
+  display: block;
+  margin: 0 0 7px;
+  color: #365068;
+  font-size: 13px;
+  font-weight: 700;
+}
+.page-login input{
+  width: 100%;
+  height: 47px;
+  margin-bottom: 20px;
+  padding: 0 13px;
+  border: 1px solid #bdc8cd;
+  border-radius: 4px;
+  background: #fffdf9;
+  color: var(--tinta);
+  font: inherit;
+  font-size: 15px;
+}
+.page-login input::placeholder{
+  color: #8b969c;
+}
+.page-login input:focus{
+  outline: 3px solid rgba(57, 169, 162, .22);
+  border-color: var(--turquesa);
+}
+.page-login form>button[type="submit"]{
+  width: 100%;
+  min-height: 48px;
+  margin-top: 2px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--azul);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .18s ease, transform .18s ease;
+}
+.page-login form>button[type="submit"]:hover{
+  background: #074962;
+  transform: translateY(-1px);
+}
+.page-login .password-wrapper{
+  position: relative;
+}
+.page-login .password-wrapper input{
+  padding-right: 48px;
+}
+.page-login .btn-ojo{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 47px;
+  height: 47px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.page-login .btn-ojo img{
+  width: 20px !important;
+  height: 20px !important;
+  opacity: .62;
+}
+.page-login .btn-ojo:hover img{
+  opacity: 1;
+}
+.page-login .link{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+  text-align: center;
+}
+.page-login .link a{
+  color: var(--azul);
+  font-size: 14px;
+  text-decoration-color: rgba(11, 93, 122, .35);
+  text-underline-offset: 3px;
+}
+.page-login .link a:last-child{
+  font-weight: 700;
+}
+@media (max-width:700px) {
+  .page-login .tarjeta-form{
+    padding: 38px 28px 42px;
+  }
+  .page-login .tarjeta-form h2{
+    font-size: 28px;
+  }
+}
+@media (min-width:1000px) {
+  .page-login .tarjeta{
+    min-height: 720px;
+  }
+  .page-login .tarjeta-form{
+    padding: 92px 105px;
+  }
+  .page-login .tarjeta-form h2{
+    font-size: 44px;
+    margin-bottom: 12px;
+  }
+  .page-login .tarjeta-form h2+p{
+    margin-bottom: 42px;
+    font-size: 19px;
+  }
+  .page-login label{
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .page-login input{
+    height: 60px;
+    margin-bottom: 27px;
+    padding: 0 18px;
+    font-size: 18px;
+  }
+  .page-login .btn-ojo{
+    width: 60px;
+    height: 60px;
+  }
+  .page-login form>button[type="submit"]{
+    min-height: 61px;
+    font-size: 19px;
+  }
+  .page-login .link{
+    gap: 14px;
+    margin-top: 32px;
+  }
+  .page-login .link a{
+    font-size: 17px;
+  }
+}
+body.page-registro{
+  display: grid;
+  place-items: center;
+}
+.page-registro .tarjeta{
+  min-height: 650px;
+}
+.page-registro .tarjeta-form{
+  flex: 1;
+  padding: 43px 58px;
+  color: var(--tinta);
+}
+.page-registro .tarjeta-form h2{
+  margin-bottom: 25px;
+  font-size: 30px;
+  line-height: 1.1;
+}
+.page-registro .mensaje-error{
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border: 1px solid #e6bcbc;
+  border-radius: 4px;
+  background: #fff7f6;
+  color: #a43b3b;
+  font-size: 14px;
+}
+.page-registro label{
+  display: block;
+  margin-bottom: 7px;
+  color: #365068;
+  font-size: 12px;
+  font-weight: 700;
+}
+.page-registro input{
+  width: 100%;
+  height: 42px;
+  margin-bottom: 14px;
+  padding: 0 12px;
+  border: 1px solid #bdc8cd;
+  border-radius: 4px;
+  background: #fffdf9;
+  color: var(--tinta);
+  font: inherit;
+  font-size: 14px;
+}
+.page-registro input:focus{
+  outline: 3px solid rgba(57, 169, 162, .22);
+  border-color: var(--turquesa);
+}
+.page-registro input::placeholder{
+  color: #8b969c;
+}
+.page-registro .nombre-apellido{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.page-registro .password-wrapper{
+  position: relative;
+}
+.page-registro .password-wrapper input{
+  padding-right: 46px;
+}
+.page-registro .btn-ojo{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.page-registro .btn-ojo img{
+  width: 19px !important;
+  height: 19px !important;
+  opacity: .62;
+}
+.page-registro form>button[type="submit"]{
+  width: 100%;
+  min-height: 46px;
+  margin-top: 3px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--azul);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .18s ease, transform .18s ease;
+}
+.page-registro form>button[type="submit"]:hover{
+  background: #074962;
+  transform: translateY(-1px);
+}
+.page-registro .link{
+  margin-top: 20px;
+  text-align: center;
+}
+.page-registro .link a{
+  color: var(--azul);
+  font-size: 14px;
+  text-underline-offset: 3px;
+}
+@media (max-width:700px) {
+  .page-registro .tarjeta-form{
+    padding: 34px 28px 40px;
+  }
+  .page-registro .nombre-apellido{
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+@media (min-width:1000px) {
+  .page-registro .tarjeta{
+    min-height: 780px;
+  }
+  .page-registro .tarjeta-form{
+    padding: 58px 94px;
+  }
+  .page-registro .tarjeta-form h2{
+    margin-bottom: 32px;
+    font-size: 42px;
+  }
+  .page-registro label{
+    margin-bottom: 9px;
+    font-size: 15px;
+  }
+  .page-registro input{
+    height: 54px;
+    margin-bottom: 18px;
+    padding: 0 16px;
+    font-size: 17px;
+  }
+  .page-registro .btn-ojo{
+    width: 54px;
+    height: 54px;
+  }
+  .page-registro form>button[type="submit"]{
+    min-height: 58px;
+    font-size: 18px;
+  }
+  .page-registro .link a{
+    font-size: 17px;
+  }
+}
+body.page-recuperar{
+  display: grid;
+  place-items: center;
+}
+.page-recuperar .tarjeta{
+  min-height: 500px;
+}
+.page-recuperar .tarjeta-form{
+  flex: 1;
+  padding: 58px 62px;
+  color: var(--tinta);
+}
+.page-recuperar .tarjeta-form h2{
+  margin-bottom: 10px;
+  font-size: 30px;
+  line-height: 1.12;
+}
+.page-recuperar .descripcion{
+  margin: 0 0 30px;
+  color: var(--gris);
+  font-size: 15px;
+  line-height: 1.55;
+}
+.page-recuperar label{
+  display: block;
+  margin-bottom: 7px;
+  color: #365068;
+  font-size: 13px;
+  font-weight: 700;
+}
+.page-recuperar input{
+  width: 100%;
+  height: 47px;
+  margin-bottom: 20px;
+  padding: 0 13px;
+  border: 1px solid #bdc8cd;
+  border-radius: 4px;
+  background: #fffdf9;
+  color: var(--tinta);
+  font: inherit;
+  font-size: 15px;
+}
+.page-recuperar input:focus{
+  outline: 3px solid rgba(57, 169, 162, .22);
+  border-color: var(--turquesa);
+}
+.page-recuperar button{
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--azul);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .18s ease, transform .18s ease;
+}
+.page-recuperar button:hover{
+  background: #074962;
+  transform: translateY(-1px);
+}
+.page-recuperar .volver{
+  margin-top: 24px;
+  text-align: center;
+}
+.page-recuperar .volver a{
+  color: var(--azul);
+  font-size: 14px;
+  text-underline-offset: 3px;
+}
+@media (max-width:700px) {
+  .page-recuperar .tarjeta-form{
+    padding: 38px 28px 42px;
+  }
+  .page-recuperar .tarjeta-form h2{
+    font-size: 27px;
+  }
+}
+@media (min-width:1000px) {
+  .page-recuperar .tarjeta{
+    min-height: 720px;
+  }
+  .page-recuperar .tarjeta-form{
+    padding: 105px;
+  }
+  .page-recuperar .tarjeta-form h2{
+    font-size: 43px;
+  }
+  .page-recuperar .descripcion{
+    margin-bottom: 42px;
+    font-size: 19px;
+  }
+  .page-recuperar label{
+    font-size: 16px;
+  }
+  .page-recuperar input{
+    height: 60px;
+    margin-bottom: 27px;
+    font-size: 18px;
+  }
+  .page-recuperar button{
+    min-height: 61px;
+    font-size: 19px;
+  }
+  .page-recuperar .volver a{
+    font-size: 17px;
+  }
+}

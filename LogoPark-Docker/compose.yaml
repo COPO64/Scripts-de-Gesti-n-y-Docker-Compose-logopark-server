@@ -1,0 +1,49 @@
+services:
+
+  apache:
+    build: .
+    container_name: logopark-apache
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      LOGOPARK_DB_HOST: mysql
+      LOGOPARK_DB_PORT: "3306"
+      LOGOPARK_DB_NAME: ${MYSQL_DATABASE}
+      LOGOPARK_DB_USER: root
+      LOGOPARK_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web:/var/www/html
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - logopark-network
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.4
+    container_name: logopark-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - logopark_db_data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d:ro
+    networks:
+      - logopark-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    restart: unless-stopped
+
+volumes:
+  logopark_db_data:
+
+networks:
+  logopark-network:
+    driver: bridge

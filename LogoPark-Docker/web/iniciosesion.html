@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>LOGOPARK - Login</title>
+  <link rel="stylesheet" href="css/estilos.css?v=20260819-4">
+  <link rel="stylesheet" href="css/acceso.css?v=20260901-1">
+</head>
+<body class="page-login">
+  <div class="tarjeta">
+    <div class="tarjeta-image">
+      <img src="Imagenes/logo-logopark-transparente.png" alt="Logo LOGOPARK">
+      <p>LOGOPARK</p>
+      <span class="marca-frase">Estaciona fácil con LogoPark</span>
+    </div>
+    <div class="tarjeta-form">
+      <h2>Inicio de sesión</h2>
+      <p>Ingresá con tu cuenta, en caso de no tener presiona el botón Registrarse</p>
+      <form action="Scripts/php/procesa.php" method="post">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required>
+        <label for="password">Contrase&ntilde;a</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" name="password" placeholder="Contrase&ntilde;a" required>
+          <button type="button" class="btn-ojo" onclick="mostrarContrasenia()" aria-label="Mostrar contraseña">
+            <img id="icono-ojo" src="Imagenes/ojoCerrado.svg" alt="Mostrar contraseña"
+              style="width:22px; height:22px; object-fit:contain;">
+          </button>
+        </div>
+        <button type="submit">Ingresar</button>
+        <div class="link">
+          <a href="htmls/Registrarse.html">¿No tienes cuenta? Regístrate</a>
+          <a href="index.html">Volver al inicio</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    function mostrarContrasenia() {
+      const input = document.getElementById("password");
+      const icono = document.getElementById("icono-ojo");
+      if (input.type === "password") {
+        input.type = "text";
+        icono.src = "Imagenes/ojoAbierto.svg";
+        icono.alt = "Ocultar contraseña";
+      } else {
+        input.type = "password";
+        icono.src = "Imagenes/ojoCerrado.svg";
+        icono.alt = "Mostrar contraseña";
+      }
+    }
+  </script>
+</body>
+</html>

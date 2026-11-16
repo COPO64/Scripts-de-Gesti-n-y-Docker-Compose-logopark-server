@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --azul: #0b5d7a;
+  --azul-hover: #074962;
+  --crema: #f7f4ed;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow-x: hidden;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: #fff;
+  background: #fff;
+}
+.contenido-portada {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(4, 24, 40, .46), rgba(4, 24, 40, .46)),
+    url("../Imagenes/portada-logopark.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.barra-portada {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 28px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.marca-portada img {
+  display: block;
+  width: 110px;
+  height: 64px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+.acciones-portada {
+  display: flex;
+  gap: 12px;
+}
+.boton-portada {
+  min-height: 46px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--azul);
+  border-radius: 4px;
+  background: var(--azul);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.boton-portada:hover,
+.boton-portada:focus-visible {
+  border-color: var(--azul-hover);
+  background: var(--azul-hover);
+  transform: translateY(-1px);
+}
+.boton-secundario {
+  border-color: rgba(255, 255, 255, .75);
+  background: rgba(8, 35, 63, .52);
+}
+.contenido-portada {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px 40px;
+  text-align: center;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, .62);
+}
+.contenido-portada h1 {
+  font-size: clamp(48px, 7vw, 104px);
+  line-height: 1;
+  letter-spacing: .14em;
+}
+.contenido-portada p {
+  margin-top: 18px;
+  font-size: clamp(19px, 2vw, 30px);
+}
+.indicador-scroll {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+.indicador-scroll span {
+  font-size: 22px;
+}
+.funciones {
+  padding: clamp(70px, 9vw, 150px) 4vw;
+  background: #fff;
+}
+.funciones img {
+  display: block;
+  width: min(100%, 1500px);
+  height: auto;
+  margin: 0 auto clamp(80px, 12vw, 180px);
+}
+.funciones img:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 700px) {
+  body {
+    background-position: 42% center;
+  }
+  .barra-portada {
+    padding: 18px;
+  }
+  .marca-portada img {
+    width: 78px;
+    height: 48px;
+  }
+  .acciones-portada {
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .boton-portada {
+    min-height: 42px;
+    padding: 0 13px;
+    font-size: 13px;
+  }
+  .contenido-portada {
+    padding-top: 92px;
+  }
+  .contenido-portada h1 {
+    font-size: clamp(40px, 13vw, 60px);
+  }
+  .contenido-portada p {
+    margin-top: 14px;
+    font-size: 18px;
+  }
+}

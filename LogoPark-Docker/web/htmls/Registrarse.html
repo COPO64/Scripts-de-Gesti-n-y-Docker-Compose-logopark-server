@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>LOGOPARK - Registro</title>
+    <link rel="stylesheet" href="../css/estilos.css?v=20260819-4">
+    <link rel="stylesheet" href="../css/acceso.css?v=20261111-2">
+</head>
+<body class="page-registro">
+    <div class="tarjeta">
+        <div class="tarjeta-image">
+            <img src="../Imagenes/logo-logopark-transparente.png" alt="Logo LOGOPARK">
+            <p>LOGOPARK</p>
+            <span class="marca-frase">Estaciona fácil con LogoPark</span>
+        </div>
+        <div class="tarjeta-form">
+            <h2>Crear cuenta</h2>
+            <p id="mensajeRegistro" class="mensaje-error" hidden></p>
+            <form action="../Scripts/php/procesa_registro.php" method="post">
+                <div class="nombre-apellido">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="nombre" required>
+                    </div>
+                    <div>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="apellido" required>
+                    </div>
+                </div>
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" placeholder="nombre de usuario" required>
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                <label for="telefono">Número de teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+598 99 123 456" required>
+                <label for="password">Contrase&ntilde;a</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Elegí una contrase&ntilde;a" required>
+                    <button type="button" class="btn-ojo" onclick="mostrarContrasenia()" aria-label="Mostrar contraseña">
+                    <img id="icono-ojo" src="../Imagenes/ojoCerrado.svg" alt="Mostrar contraseña"
+                        style="width:22px; height:22px; object-fit:contain;">
+                </button>
+                </div>
+                <button type="submit">Registrarse</button>
+                <div class="link">
+                    <a href="../iniciosesion.html">Volver al inicio de sesión</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function mostrarContrasenia() {
+            const input = document.getElementById("password");
+            const icono = document.getElementById("icono-ojo");
+            const visible = input.type === "text";
+            input.type = visible ? "password" : "text";
+            icono.src = visible ? "../Imagenes/ojoCerrado.svg" : "../Imagenes/ojoAbierto.svg";
+            icono.alt = visible ? "Mostrar contraseña" : "Ocultar contraseña";
+        }
+
+        const error = new URLSearchParams(window.location.search).get('error');
+        const mensaje = document.getElementById('mensajeRegistro');
+        if (error === 'duplicado') {
+            mensaje.textContent = 'El usuario o el correo electrónico ya están registrados.';
+            mensaje.hidden = false;
+        } else if (error === 'guardar') {
+            mensaje.textContent = 'No se pudo crear la cuenta.';
+            mensaje.hidden = false;
+        }
+    </script>
+</body>
+</html>

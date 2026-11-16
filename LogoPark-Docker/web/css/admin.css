@@ -1,0 +1,448 @@
+body {
+  display: block;
+  min-height: 100vh;
+  margin: 0;
+  background: #edf2f0;
+  color: #17324a;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+.encabezado {
+  height: 64px;
+  padding: 0 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #08233f;
+  box-shadow: 0 3px 12px rgba(8, 35, 63, .18);
+}
+.encabezadoNombre {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-decoration: none;
+}
+.encabezado-acciones {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #dce9e8;
+  font-size: 14px;
+}
+.encabezado-acciones a {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, .38);
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+}
+.encabezado-acciones a:hover {
+  background: rgba(255, 255, 255, .12);
+}
+.contenedor-admin {
+  width: min(100% - 40px, 1120px);
+  margin: 42px auto;
+  padding: 34px;
+  border: 1px solid #d8e0dc;
+  border-radius: 10px;
+  background: #f7f4ed;
+  box-shadow: 0 15px 35px rgba(8, 35, 63, .10);
+}
+.admin-titulo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.eyebrow {
+  margin: 0 0 8px;
+  color: #0b5d7a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+.admin-titulo h1 {
+  margin: 0;
+  font-size: 31px;
+}
+.admin-titulo p:not(.eyebrow) {
+  margin: 8px 0 0;
+  color: #6b7783;
+}
+.resumen {
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: #e9f3f1;
+  color: #416071;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.resumen span {
+  color: #0b5d7a;
+  font-size: 22px;
+  font-weight: 700;
+}
+.admin-titulo-acciones {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn-crear {
+  display: inline-grid;
+  min-height: 46px;
+  padding: 0 18px;
+  place-items: center;
+  border-radius: 4px;
+  background: #0b5d7a;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn-crear:hover { background: #074962; }
+.tabla-contenedor {
+  overflow-x: auto;
+  border: 1px solid #dbe3df;
+  border-radius: 7px;
+  background: #fffdf9;
+}
+.tabla-usuarios {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+.tabla-usuarios th {
+  padding: 14px 16px;
+  background: #eef5f3;
+  color: #365068;
+  font-size: 12px;
+  letter-spacing: .05em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.tabla-usuarios td {
+  padding: 15px 16px;
+  border-top: 1px solid #edf0ee;
+  font-size: 14px;
+}
+.tabla-usuarios tr:hover td {
+  background: #fcfdfb;
+}
+.rol {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 50px;
+  background: #e9f3f1;
+  color: #17635f;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.rol.admin {
+  background: #e7eef8;
+  color: #315980;
+}
+.acciones-tabla {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.acciones-tabla form {
+  margin: 0;
+}
+.btn-editar,
+.btn-eliminar {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-editar {
+  border: 1px solid #bdc8cd;
+  color: #365068;
+  background: #fffdf9;
+}
+.btn-eliminar {
+  border: 1px solid #e6bcbc;
+  background: #fff7f6;
+  color: #a43b3b;
+}
+.cuenta-propia {
+  color: #71808a;
+  font-size: 12px;
+  font-style: italic;
+}
+.contenedor-form {
+  width: min(100% - 40px, 700px);
+  margin: 42px auto;
+  padding: 34px;
+  border: 1px solid #d8e0dc;
+  border-radius: 10px;
+  background: #f7f4ed;
+  box-shadow: 0 15px 35px rgba(8, 35, 63, .10);
+}
+.contenedor-form h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+.contenedor-form>p {
+  margin: 0 0 26px;
+  color: #6b7783;
+}
+.contenedor-form>.mensaje-error {
+  padding: 12px 14px;
+  border: 1px solid #e6bcbc;
+  border-radius: 4px;
+  background: #fff7f6;
+  color: #a43b3b;
+}
+.contenedor-admin>.mensaje-error {
+  margin: 20px 0;
+  padding: 12px 14px;
+  border: 1px solid #e6bcbc;
+  border-radius: 4px;
+  background: #fff7f6;
+  color: #a43b3b;
+}
+.linea-formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 14px;
+}
+.campo label {
+  display: block;
+  margin: 0 0 7px;
+  color: #365068;
+  font-size: 13px;
+  font-weight: 700;
+}
+.campo input,
+.campo select {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  margin: 0 0 16px;
+  padding: 0 12px;
+  border: 1px solid #bdc8cd;
+  border-radius: 4px;
+  background: #fffdf9;
+  color: #17324a;
+  font: inherit;
+}
+.campo input:focus,
+.campo select:focus {
+  outline: 3px solid rgba(57, 169, 162, .2);
+  border-color: #39a9a2;
+}
+.col-full {
+  grid-column: 1 / -1;
+}
+.fila-botones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.btn-cancelar,
+.btn-guardar {
+  display: grid;
+  min-height: 46px;
+  place-items: center;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-cancelar {
+  border: 1px solid #bdc8cd;
+  color: #365068;
+  background: #fffdf9;
+}
+.btn-guardar {
+  border: 0;
+  background: #0b5d7a;
+  color: #fff;
+}
+.btn-guardar:hover {
+  background: #074962;
+}
+.estadisticas-admin {
+  margin-top: 46px;
+  padding-top: 38px;
+  border-top: 1px solid #d8e0dc;
+}
+.estadisticas-admin-titulo {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 22px;
+}
+.estadisticas-admin-titulo p {
+  margin: 0 0 8px;
+  color: #0b5d7a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+.estadisticas-admin-titulo h2 {
+  margin: 0 0 8px;
+  font-size: 29px;
+}
+.estadisticas-admin-titulo span {
+  color: #71808a;
+}
+.estadisticas-admin-titulo>a {
+  color: #0b5d7a;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.resumen-admin-estadisticas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.resumen-admin-estadisticas article {
+  min-height: 132px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dbe3df;
+  border-radius: 7px;
+  background: #fffdf9;
+}
+.resumen-admin-estadisticas article>span {
+  color: #60727f;
+  font-size: 13px;
+  font-weight: 700;
+}
+.resumen-admin-estadisticas strong {
+  margin: 11px 0 5px;
+  color: #0b5d7a;
+  font-size: 31px;
+  line-height: 1.05;
+}
+.resumen-admin-estadisticas .dato-calle-admin {
+  font-size: 18px;
+}
+.resumen-admin-estadisticas small {
+  margin-top: auto;
+  color: #7a8992;
+}
+.graficas-admin {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.grafica-admin {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #dbe3df;
+  border-radius: 7px;
+  background: #fffdf9;
+}
+.grafica-admin-ancha {
+  grid-column: 1 / -1;
+}
+.grafica-admin h3 {
+  margin: 0 0 18px;
+  font-size: 19px;
+}
+.grafica-admin>div {
+  height: 270px;
+  position: relative;
+}
+@media (max-width:700px) {
+  .encabezado {
+    padding: 0 18px;
+  }
+  .encabezado-acciones span {
+    display: none;
+  }
+  .contenedor-admin,
+  .contenedor-form {
+    width: 100%;
+    margin: 0;
+    padding: 28px 20px 36px;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+  .admin-titulo {
+    display: block;
+  }
+  .admin-titulo h1 {
+    font-size: 27px;
+  }
+  .resumen {
+    display: inline-block;
+    margin-top: 18px;
+  }
+  .admin-titulo-acciones {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .tabla-contenedor {
+    border-radius: 6px;
+  }
+  .linea-formulario {
+    grid-template-columns: 1fr;
+  }
+  .fila-botones {
+    grid-template-columns: 1fr;
+  }
+  .estadisticas-admin-titulo {
+    display: block;
+  }
+  .estadisticas-admin-titulo>a {
+    display: inline-block;
+    margin-top: 12px;
+  }
+  .resumen-admin-estadisticas,
+  .graficas-admin {
+    grid-template-columns: 1fr;
+  }
+  .grafica-admin-ancha {
+    grid-column: auto;
+  }
+}
+@media (min-width:1000px) {
+  .contenedor-admin {
+    width: min(calc(100vw - 90px), 1500px);
+    padding: 48px;
+  }
+  .admin-titulo h1 {
+    font-size: 42px;
+  }
+  .admin-titulo p:not(.eyebrow) {
+    font-size: 18px;
+  }
+  .tabla-usuarios th {
+    padding: 18px 20px;
+    font-size: 14px;
+  }
+  .tabla-usuarios td {
+    padding: 19px 20px;
+    font-size: 17px;
+  }
+  .contenedor-form {
+    width: min(calc(100vw - 100px), 1100px);
+    padding: 52px;
+  }
+  .contenedor-form h1 {
+    font-size: 42px;
+  }
+  .campo input,
+  .campo select {
+    height: 58px;
+    font-size: 17px;
+  }
+}
